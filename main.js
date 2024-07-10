@@ -1,5 +1,5 @@
 // main.js
-var worker = new SharedWorker('shared-worker.js');
+var worker = new SharedWorker('https://vthorat-csod.github.github.io/shared-web-worker-test/shared-worker.js');
 worker.port.start();
 
 document.getElementById('sendMessageBtn').addEventListener('click', function() {

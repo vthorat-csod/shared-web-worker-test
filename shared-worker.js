@@ -5,6 +5,8 @@ onconnect = function(e) {
     const port = e.ports[0];
     connections.push(port);
 
+    console.log('Shared Worker connected.');
+
     port.onmessage = function(event) {
         console.log('Message received in Shared Worker:', event.data);
 
