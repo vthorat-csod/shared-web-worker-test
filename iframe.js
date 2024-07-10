@@ -13,7 +13,7 @@ worker.port.onmessage = function(event) {
 };
 
 // Send initial message to the main page
-worker.port.postMessage({
-    from: 'iframe',
-    message: 'Iframe loaded and ready'
-});
+// worker.port.postMessage({
+//     from: 'iframe',
+//     message: 'Iframe loaded and ready'
+// });
