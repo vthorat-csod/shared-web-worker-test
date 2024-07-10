@@ -1,5 +1,6 @@
 // main.js
 var worker = new SharedWorker('shared-worker.js');
+worker.port.start();
 
 document.getElementById('sendMessageBtn').addEventListener('click', function() {
     worker.port.postMessage({
@@ -11,6 +12,3 @@ document.getElementById('sendMessageBtn').addEventListener('click', function() {
 worker.port.onmessage = function(event) {
     console.log('Message received in Main Page:', event.data);
 };
-
-worker.port.start();
-
