@@ -1,5 +1,5 @@
 // iframe.js
-var worker = new SharedWorker('https://vthorat-csod.github.github.io/shared-web-worker-test/shared-worker.js');
+var worker = new SharedWorker('shared-worker.js');
 worker.port.start();
 
 worker.port.onmessage = function(event) {
