@@ -1,22 +1,14 @@
-// main.js
-// var worker = new SharedWorker('shared-worker.js');
-import getCrossOriginWorkerURL from 'crossoriginworker';
+import CrossOriginWorker from 'crossoriginworker';
 
-async function createWorker() {
-  const workerURL = await getCrossOriginWorkerURL('shared-wprker.js');
-  return new Worker(workerURL);
-}
-
-const myWorker = await createWorker();
-myWorker.port.start();
+const worker = new CrossOriginWorker('http://localhost:8080/shared-worker.js');
 
 document.getElementById('sendMessageBtn').addEventListener('click', function() {
-    myWorker.port.postMessage({
+    worker.postMessage({
         from: 'main',
         message: 'Hello from Main Page'
     });
 });
 
-worker.port.onmessage = function(event) {
+worker.onmessage = function(event) {
     console.log('Message received in Main Page:', event.data);
 };
