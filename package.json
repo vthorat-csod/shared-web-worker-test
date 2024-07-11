@@ -1,5 +1,20 @@
 {
+  "name": "sharedworker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
   "dependencies": {
-    "crossoriginworker": "^1.1.0"
-  }
+    "crossoriginworker": "^1.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2",
+    "http-server": "^0.12.3"
+  },
+  "scripts": {
+    "start": "http-server dist -p 8081",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC"
 }
